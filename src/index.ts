@@ -115,15 +115,16 @@ async function checkBalance(item: MonitorItem): Promise<void> {
   try {
     if (item.tokenType === "native") {
       const balance = await provider.getBalance(item.address);
-      const balanceEth = ethers.formatEther(balance);
+      const balanceFormatted = ethers.formatEther(balance);
       const threshold = parseFloat(item.threshold);
+      const nativeTokenName = chainInfo.nativeTokenName || "ETH";
 
       console.log(
-        `Checking ${item.address} on ${chainName} (${item.chainId}): ${balanceEth} ETH`,
+        `Checking ${item.address} on ${chainName} (${item.chainId}): ${balanceFormatted} ${nativeTokenName}`,
       );
 
-      if (parseFloat(balanceEth) < threshold) {
-        await sendSlackAlert(item, balanceEth, "ETH");
+      if (parseFloat(balanceFormatted) < threshold) {
+        await sendSlackAlert(item, balanceFormatted, nativeTokenName);
       }
     } else if (item.tokenType === "erc20" && item.tokenAddress) {
       const contract = new ethers.Contract(

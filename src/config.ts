@@ -1,6 +1,7 @@
 export interface ChainInfo {
   rpc: string;
   name: string;
+  nativeTokenName: string;
 }
 
 export interface ChainConfig {

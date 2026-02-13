@@ -2,15 +2,18 @@
   "rpc": {
     "1": {
       "rpc": "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
-      "name": "Ethereum Mainnet"
+      "name": "Ethereum Mainnet",
+      "nativeTokenName": "ETH"
     },
     "56": {
       "rpc": "https://bsc-dataseed.binance.org/",
-      "name": "Binance Smart Chain"
+      "name": "Binance Smart Chain",
+      "nativeTokenName": "BNB"
     },
     "137": {
       "rpc": "https://polygon-rpc.com/",
-      "name": "Polygon Mainnet"
+      "name": "Polygon Mainnet",
+      "nativeTokenName": "MATIC"
     }
   },
   "slackWebhook": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK",
