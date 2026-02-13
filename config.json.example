@@ -1,0 +1,33 @@
+{
+  "rpc": {
+    "1": {
+      "rpc": "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
+      "name": "Ethereum Mainnet"
+    },
+    "56": {
+      "rpc": "https://bsc-dataseed.binance.org/",
+      "name": "Binance Smart Chain"
+    },
+    "137": {
+      "rpc": "https://polygon-rpc.com/",
+      "name": "Polygon Mainnet"
+    }
+  },
+  "slackWebhook": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK",
+  "interval": 600,
+  "monitors": [
+    {
+      "address": "0xYourAddress1",
+      "chainId": 1,
+      "tokenType": "native",
+      "threshold": "0.1"
+    },
+    {
+      "address": "0xYourAddress2",
+      "chainId": 56,
+      "tokenType": "erc20",
+      "tokenAddress": "0xTokenAddress",
+      "threshold": "100"
+    }
+  ]
+}
